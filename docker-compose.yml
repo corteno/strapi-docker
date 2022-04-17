@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  strapi:
+    image: mystrapi:latest
+    restart: unless-stopped
+    container_name: node-backend
+    build: 
+      context: .
+      dockerfile: ./docker/node.dockerfile
+    volumes:
+      - ./backend:/opt/app
+    ports:
+      - '1337:1337'

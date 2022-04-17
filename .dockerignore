@@ -1,0 +1,6 @@
+./backend/.tmp/
+./backend/.cache/
+./backend/.git/
+./backend/build/
+./backend/node_modules/
+./backend/data/
