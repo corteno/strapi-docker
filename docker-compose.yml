@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   strapi:
-    image: mystrapi:latest
+    image: strapi-docker
     restart: unless-stopped
     container_name: node-backend
     build: 
