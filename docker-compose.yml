@@ -11,3 +11,23 @@ services:
       - ./backend:/opt/app
     ports:
       - '1337:1337'
+  nuxt:
+    container_name: nuxt
+    build:
+      context: .
+      dockerfile: ./docker/nuxt.dockerfile
+    volumes:
+      - ./nuxt/:/usr/src/nuxt
+    entrypoint: /bin/sh
+    ports:
+      - '3000:3000'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    tty: true
+  meilisearch:
+    container_name: meilisearch
+    image: getmeili/meilisearch
+    volumes:
+      - ./meilisearch:/data.ms
+    ports:
+      - '7700:7700'
